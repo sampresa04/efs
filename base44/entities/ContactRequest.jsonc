@@ -1,0 +1,43 @@
+{
+  "name": "ContactRequest",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Nombre",
+      "description": "Nombre completo del solicitante"
+    },
+    "email": {
+      "type": "string",
+      "title": "Correo",
+      "description": "Correo electr\u00f3nico de contacto"
+    },
+    "phone": {
+      "type": "string",
+      "title": "Tel\u00e9fono",
+      "description": "Tel\u00e9fono de contacto"
+    },
+    "service": {
+      "type": "string",
+      "title": "Servicio",
+      "description": "Servicio de inter\u00e9s",
+      "enum": [
+        "Mantenimiento el\u00e9ctrico",
+        "Sistemas contra incendio",
+        "Obra civil",
+        "Buceo industrial",
+        "Otro"
+      ]
+    },
+    "message": {
+      "type": "string",
+      "title": "Mensaje",
+      "description": "Detalle de la solicitud"
+    }
+  },
+  "required": [
+    "name",
+    "email",
+    "message"
+  ]
+}

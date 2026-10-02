@@ -1,0 +1,202 @@
+/* ==========================================================================
+   EFS – Electrical & Fire Systems
+   Hoja de estilos principal limpia y unificada
+   ========================================================================== */
+
+:root {
+  --efs-bg: #ffffff;
+  --efs-bg-soft: #f8fafc;
+  --efs-primary: #143322;
+  --efs-accent: #7BC142;
+  --efs-accent-dim: #6aa838;
+  --efs-white: #ffffff;
+  --efs-gray: #64748b;
+  --efs-line: #e2e8f0;
+  --efs-radius: 18px;
+}
+
+/* Fondo global blanco e higiénico (elimina franjas negras) */
+.efs-root {
+  background: #ffffff;
+  color: var(--efs-primary);
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Padding uniforme para secciones sin bordes extra */
+.efs-section {
+  position: relative;
+  background: #ffffff;
+  padding: clamp(3.5rem, 6vw, 6rem) clamp(1.25rem, 5vw, 5rem);
+  border: none !important;
+}
+
+/* Eyebrows / Chips superiores */
+.efs-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--efs-primary);
+  font-weight: 800;
+}
+
+.efs-eyebrow::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--efs-accent);
+  box-shadow: 0 0 10px rgba(123, 193, 66, 0.6);
+}
+
+.efs-heading {
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--efs-primary);
+
+}
+
+.efs-gradient-text {
+  background: linear-gradient(120deg, #143322 40%, #7BC142 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Tarjetas claras con sombras suaves */
+.efs-card {
+  background: #ffffff;
+  border: 1px solid var(--efs-line);
+  border-radius: var(--efs-radius);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.efs-card:hover {
+  border-color: var(--efs-accent);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -15px rgba(20, 51, 34, 0.08);
+}
+
+/* Botones principales */
+.efs-btn-primary {
+  background: var(--efs-accent);
+  color: var(--efs-primary);
+  font-weight: 800;
+  border-radius: 999px;
+  padding: 0.9rem 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 20px rgba(123, 193, 66, 0.25);
+}
+
+.efs-btn-primary:hover {
+  background: #88d24b;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(123, 193, 66, 0.4);
+}
+
+.efs-btn-outline {
+  border: 1.5px solid var(--efs-primary);
+  border-radius: 999px;
+  padding: 0.9rem 2rem;
+  color: var(--efs-primary);
+  font-weight: 700;
+  transition: border-color 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.efs-btn-outline:hover {
+  border-color: var(--efs-accent);
+  background: #EEF7F0;
+  color: var(--efs-primary);
+}
+
+/* Revelado suave al hacer scroll */
+.efs-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.efs-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Marquee / carrusel de clientes */
+.efs-marquee-track {
+  display: flex;
+  gap: 3rem;
+  width: max-content;
+  animation: efs-scroll 32s linear infinite;
+}
+
+.efs-marquee-wrap:hover .efs-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes efs-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Resplandor decorativo controlado */
+.efs-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  background: radial-gradient(circle, rgba(123, 193, 66, 0.12), transparent 70%);
+  pointer-events: none;
+}
+
+/* Desactivación de recortes que producían huecos oscuros */
+.efs-diagonal {
+  clip-path: none !important;
+}
+
+::selection {
+  background: var(--efs-accent);
+  color: var(--efs-primary);
+}
+
+.efs-scrollbar::-webkit-scrollbar {
+  height: 6px;
+}
+.efs-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--efs-accent);
+  border-radius: 999px;
+}
+
+/* Mapa interactivo de México */
+.efs-map-dim {
+  fill: #f1f5f9;
+  stroke: #cbd5e1;
+  stroke-width: 1;
+}
+
+.efs-map-state {
+  fill: #e2e8f0;
+  stroke: #94a3b8;
+  stroke-width: 1;
+  cursor: pointer;
+  transition: fill 0.3s ease, filter 0.3s ease;
+}
+
+.efs-map-state:hover {
+  fill: #EEF7F0;
+  stroke: var(--efs-accent);
+}
+
+.efs-map-selected {
+  fill: var(--efs-accent);
+  stroke: var(--efs-primary);
+  filter: drop-shadow(0 0 6px rgba(123, 193, 66, 0.5));
+}
+
+.efs-chip-selected {
+  border-color: var(--efs-accent);
+  color: var(--efs-primary);
+  background: #EEF7F0;
+}
