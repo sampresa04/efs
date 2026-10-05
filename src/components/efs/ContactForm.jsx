@@ -100,7 +100,7 @@ export default function ContactForm() {
     <div className="w-full space-y-5 sm:space-y-6">
       <div className="text-left">
         <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#143322]">
-          Enviarnos un Mensaje
+          Envía un mensaje
         </h3>
         <p className="text-slate-500 text-xs sm:text-sm mt-1">
           Completa los campos a continuación y te responderemos a la brevedad.
