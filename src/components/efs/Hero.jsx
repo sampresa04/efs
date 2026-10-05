@@ -9,12 +9,12 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative w-full overflow-hidden bg-white pt-20 sm:pt-24 lg:pt-20 pb-4 lg:pb-20 text-[#143322]"
+      className="relative w-full overflow-hidden bg-white pt-20 lg:pt-24 pb-8 lg:pb-14 text-[#143322]"
     >
       {/* 1. FONDOS Y EFECTOS DE LUZ AMBIENTAL */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -top-30 -right-40 w-[700px] h-[700px] lg:w-[1000px] lg:h-[1000px] bg-[#7BC142]/10 rounded-full blur-[140px]" />
-        <div className="absolute top-1/2 -left-40 w-[600px] h-[600px] lg:w-[850px] lg:h-[850px] bg-[#143322]/5 rounded-full blur-[150px]" />
+        <div className="absolute -top-30 -right-40 w-[700px] h-[700px] lg:w-[900px] lg:h-[900px] bg-[#7BC142]/10 rounded-full blur-[140px]" />
+        <div className="absolute top-1/2 -left-40 w-[600px] h-[600px] lg:w-[800px] lg:h-[800px] bg-[#143322]/5 rounded-full blur-[150px]" />
       </div>
 
       {/* 2. ESTRUCTURA PRINCIPAL */}
@@ -26,26 +26,29 @@ export default function Hero() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2.5 px-4 py-0.5 rounded-full bg-[#EEF7F0] border border-[#7BC142]/30 text-[#143322] text-xs md:text-sm font-bold tracking-wide w-fit mb-4 sm:mb-5 shadow-xs"
+            className="inline-flex items-center gap-2.5 px-4 py-1 rounded-full bg-[#EEF7F0] border border-[#7BC142]/30 text-[#143322] text-xs md:text-sm font-bold tracking-wide w-fit mb-4 shadow-xs"
           >
             <span className="w-2.5 h-2.5 rounded-full bg-[#7BC142] animate-ping" />
             ORGULLOSAMENTE DURANGUENSE
           </motion.div>
 
-          {/* Título Principal con Colores y Degradados Exactos */}
+          {/* Título Principal Bolder y Estructurado en 3 líneas exactas */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-black text-[#143322] leading-[1.05] mb-5 tracking-tight"
+            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-[#143322] leading-[1.08] mb-5 tracking-tight"
           >
-            Seguridad{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#143322] via-[#2A6644] to-[#7BC142]">
-              Eléctrica
-            </span>{" "}
-            <br />y Protección <span className="text-[#7BC142]">Contra</span>{" "}
-            <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7BC142] to-[#143322]">
+            <span className="block whitespace-nowrap">
+              Seguridad{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#143322] via-[#2A6644] to-[#7BC142]">
+                Eléctrica
+              </span>
+            </span>
+            <span className="block whitespace-nowrap">
+              y Protección <span className="text-[#7BC142]">Contra</span>
+            </span>
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#7BC142] to-[#143322]">
               Incendio
             </span>
           </motion.h1>
@@ -71,13 +74,13 @@ export default function Hero() {
           >
             <button
               onClick={() => scrollTo("#servicios")}
-              className="px-8 py-4 rounded-xl bg-[#143322] hover:bg-[#1E4D33] text-white font-bold text-base md:text-lg transition-all duration-300 shadow-xl shadow-[#143322]/20 hover:scale-[1.02] active:scale-[0.98]"
+              className="px-7 py-3.5 rounded-xl bg-[#143322] hover:bg-[#1E4D33] text-white font-bold text-base md:text-lg transition-all duration-300 shadow-xl shadow-[#143322]/20 hover:scale-[1.02] active:scale-[0.98]"
             >
               Explorar Capacidades
             </button>
             <button
               onClick={() => scrollTo("#contacto")}
-              className="px-8 py-4 rounded-xl border border-slate-300 hover:border-[#7BC142] text-[#143322] font-bold text-base md:text-lg transition-all duration-300 bg-white hover:bg-[#EEF7F0]/50 shadow-xs hover:scale-[1.02] active:scale-[0.98]"
+              className="px-7 py-3.5 rounded-xl border border-slate-300 hover:border-[#7BC142] text-[#143322] font-bold text-base md:text-lg transition-all duration-300 bg-white hover:bg-[#EEF7F0]/50 shadow-xs hover:scale-[1.02] active:scale-[0.98]"
             >
               Hablar con un especialista
             </button>
@@ -88,21 +91,21 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-6 border-t border-slate-200 text-xs md:text-sm font-semibold"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-5 border-t border-slate-200 text-xs md:text-sm font-semibold"
           >
-            <div className="rounded-lg bg-[#7BC142]/15 text-[#12301F] px-4 py-3 text-center">
+            <div className="rounded-lg bg-[#7BC142]/15 text-[#12301F] px-4 py-2.5 text-center">
               Miembros NFPA
             </div>
-            <div className="rounded-lg bg-[#7BC142]/15 text-[#12301F] px-4 py-3 text-center">
+            <div className="rounded-lg bg-[#7BC142]/15 text-[#12301F] px-4 py-2.5 text-center">
               FM Global Standard
             </div>
-            <div className="rounded-lg bg-[#7BC142]/15 text-[#12301F] px-4 py-3 text-center">
+            <div className="rounded-lg bg-[#7BC142]/15 text-[#12301F] px-4 py-2.5 text-center">
               DUNS 951568189
             </div>
           </motion.div>
         </div>
 
-        {/* COLUMNA DERECHA: FOTO DE PORTADA XL (5 COLUMNAS) */}
+        {/* COLUMNA DERECHA: FOTO DE PORTADA MÁS GRANDE (5 COLUMNAS) */}
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -114,7 +117,7 @@ export default function Hero() {
 
           {/* Tarjeta contenedora de la foto */}
           <div className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-2xl group">
-            <div className="relative overflow-hidden h-[380px] sm:h-[480px] lg:h-[540px] 2xl:h-[600px] w-full">
+            <div className="relative overflow-hidden h-[340px] sm:h-[440px] lg:h-[480px] xl:h-[530px] w-full">
               <img
                 src="/img/portada.jpg"
                 onError={(e) => {
@@ -123,7 +126,7 @@ export default function Hero() {
                 alt="Inspección de sistemas contra incendio EFS"
                 className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-out"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
             </div>
           </div>
         </motion.div>
