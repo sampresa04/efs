@@ -157,7 +157,7 @@ export default function Services() {
             LO QUE HACEMOS
           </div>
 
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-[#143322] leading-[1.05] tracking-tight mb-6">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-[#143322] leading-[1.05] tracking-tight mb-6">
             Servicios diseñados para{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#143322] via-[#2A6644] to-[#7BC142]">
               no fallar nunca

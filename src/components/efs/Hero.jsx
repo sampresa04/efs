@@ -1,20 +1,3 @@
-const db = globalThis.__B44_DB__ || {
-  auth: { isAuthenticated: async () => false, me: async () => null },
-  entities: new Proxy(
-    {},
-    {
-      get: () => ({
-        filter: async () => [],
-        get: async () => null,
-        create: async () => ({}),
-        update: async () => ({}),
-        delete: async () => ({}),
-      }),
-    },
-  ),
-  integrations: { Core: { UploadFile: async () => ({ file_url: "" }) } },
-};
-
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
@@ -26,7 +9,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative w-full overflow-hidden bg-white pt-28 pb-4 lg:pt-20 lg:pb-20 text-[#143322]"
+      className="relative w-full overflow-hidden bg-white pt-20 sm:pt-24 lg:pt-20 pb-4 lg:pb-20 text-[#143322]"
     >
       {/* 1. FONDOS Y EFECTOS DE LUZ AMBIENTAL */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -43,7 +26,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2.5 px-4 py-0.5 rounded-full bg-[#EEF7F0] border border-[#7BC142]/30 text-[#143322] text-xs md:text-sm font-bold tracking-wide w-fit mb-5 shadow-xs"
+            className="inline-flex items-center gap-2.5 px-4 py-0.5 rounded-full bg-[#EEF7F0] border border-[#7BC142]/30 text-[#143322] text-xs md:text-sm font-bold tracking-wide w-fit mb-4 sm:mb-5 shadow-xs"
           >
             <span className="w-2.5 h-2.5 rounded-full bg-[#7BC142] animate-ping" />
             ORGULLOSAMENTE DURANGUENSE
