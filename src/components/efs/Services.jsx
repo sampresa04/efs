@@ -91,7 +91,7 @@ const SERVICES = [
   {
     tag: "03 · Servicio complementario",
     title: "Obra Civil",
-    image: "/obra/obra5.jpg",
+    image: "/obra/obra_vaciado/obra5.jpg",
     groups: [
       {
         heading: "Alcance del servicio",
