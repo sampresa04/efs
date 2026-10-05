@@ -26,9 +26,7 @@
 /* Padding uniforme para secciones sin bordes extra */
 .efs-section {
   position: relative;
-  background: #ffffff;
-  padding: clamp(3.5rem, 6vw, 6rem) clamp(1.25rem, 5vw, 5rem);
-  border: none !important;
+  width: 100%;
 }
 
 /* Eyebrows / Chips superiores */

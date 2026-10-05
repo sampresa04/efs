@@ -146,10 +146,14 @@ const CLIENTS = [
 const GALLERY_PROJECTS = [
   {
     id: 1,
-    url: "/img/1.jpg",
+    url: "/obra/obra_armado/obra4.png",
     photos: [
-      "/img/7.jpg",
-      "/img/1.jpg", // Agrega aquí las fotos adicionales de este proyecto
+      "/obra/obra_armado/obra4.png",
+      "/obra/obra_armado/obra1.png",
+      "/obra/obra_armado/obra2.png",
+      "/obra/obra_armado/obra3.png",
+      "/obra/obra_armado/obra6.png",
+      "/obra/obra_armado/obra10.png",
     ],
     title: "Armado de varilla y Cimentación estructural",
     tag: "Obra Civil",
@@ -225,8 +229,12 @@ const GALLERY_PROJECTS = [
   },
   {
     id: 6,
-    url: "obra/obra5.jpg",
-    photos: ["obra/obra5.jpg", "/obra/obra7.jpg"],
+    url: "obra/obra_vaciado/obra5.jpg",
+    photos: [
+      "obra/obra_vaciado/obra5.jpg",
+      "/obra/obra_vaciado/obra7.jpg",
+      "/obra/obra_vaciado/7.jpg",
+    ],
     title: "Vaciado de concreto para cimentación",
     tag: "Obra Civil",
   },

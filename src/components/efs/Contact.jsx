@@ -29,14 +29,14 @@ export default function Contact() {
               Hablemos
             </div>
 
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-[#143322] tracking-tight mb-4 leading-snug sm:leading-tight break-words w-full">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-[#143322] tracking-tight ">
               ¿Qué necesitas{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#143322] via-[#2A6644] to-[#7BC142]">
                 proteger hoy?
               </span>
             </h2>
 
-            <p className="text-slate-600 text-sm sm:text-base md:text-lg leading-relaxed font-normal max-w-2xl">
+            <p className="text-slate-600 text-sm sm:text-base md:text-lg leading-relaxed font-normal max-w-2xl mt-5 ">
               Cuéntanos qué instalación, equipo o sistema necesitas mantener,
               diagnosticar o construir. Un especialista te contactará a la
               brevedad.
