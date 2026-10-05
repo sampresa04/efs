@@ -6,6 +6,7 @@ export default function Footer() {
     <footer className="relative w-full bg-white text-[#143322] border-t border-slate-200">
       {/* Franja superior con degradado institucional */}
       <div className="h-1.5 w-full bg-gradient-to-r from-[#143322] via-[#2A6644] to-[#7BC142]" />
+      {/* CONTENEDOR PRINCIPAL */}
       <div className="max-w-[1600px] mx-auto px-6 sm:px-10 md:px-14 lg:px-16 2xl:px-20 pt-8 pb-6 lg:pt-10 lg:pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
           {/* COLUMNA 1: LOGO E INFORMACIÓN GENERAL */}
@@ -111,9 +112,46 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* PIE INFERIOR (COPYRIGHT) */}
-      </div>
-      {/* aquí cierra el contenedor con max-w, antes de la barra */}
+        {/* REDES SOCIALES (Logos directos) */}
+        <div className="pt-6 mt-8 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 text-center">
+          <span className="text-xs font-bold text-[#143322] uppercase tracking-wider">
+            Síguenos en redes
+          </span>
+
+          <div className="flex items-center gap-3">
+            {/* Facebook */}
+            <a
+              href="https://www.facebook.com/share/1EmnJNVtSS/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="w-9 h-9 rounded-lg overflow-hidden flex items-center justify-center transition-transform duration-200 hover:scale-110 shadow-sm"
+            >
+              <img
+                src="/logos/face.png"
+                alt="Facebook"
+                className="w-full h-full object-cover"
+              />
+            </a>
+
+            {/* TikTok  */}
+            <a
+              href="https://www.tiktok.com/@electricalandfiresystems?_r=1&_t=ZS-9AJE3YTc2T6"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="w-9 h-9 rounded-lg overflow-hidden flex items-center justify-center transition-transform duration-200 hover:scale-110 shadow-sm"
+            >
+              <img
+                src="/logos/tiktok.png"
+                alt="Instagram"
+                className="w-full h-full object-cover"
+              />
+            </a>
+          </div>
+        </div>
+      </div>{" "}
+      {/* Fin del contenedor max-w-[1600px] */}
       {/* PIE INFERIOR (COPYRIGHT) */}
       <div className="w-full bg-gradient-to-r from-[#143322] via-[#2A6644] to-[#7BC142]">
         <div className="max-w-[1600px] mx-auto px-6 py-5 flex flex-col items-center justify-center gap-1 text-center text-xs font-medium text-white">
