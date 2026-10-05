@@ -7,7 +7,7 @@ export default function ContactForm() {
     name: "",
     email: "",
     phone: "",
-    service: "Mantenimiento eléctrico",
+    service: "", // Inicia vacío para obligar a seleccionar una opción
     message: "",
   });
 
@@ -15,31 +15,45 @@ export default function ContactForm() {
   const [isSent, setIsSent] = useState(false);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+
+    // Validación para el teléfono: Filtra y permite SOLO números (máximo 10 dígitos)
+    if (name === "phone") {
+      const onlyNums = value.replace(/[^0-9]/g, "");
+      if (onlyNums.length <= 10) {
+        setFormData((prev) => ({ ...prev, [name]: onlyNums }));
+      }
+      return;
+    }
+
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    // Mapeo completo de variables para EmailJS
     const templateParams = {
       from_name: formData.name,
+      name: formData.name,
       from_email: formData.email,
-      phone: formData.phone || "No proporcionado",
+      email: formData.email,
+      reply_to: formData.email,
+      phone: formData.phone,
       service: formData.service,
       message: formData.message,
     };
 
-    // Reemplaza con tus IDs de EmailJS
     emailjs
       .send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        formData, // o el objeto con tus datos
+        templateParams, // <-- Se pasa templateParams correctamente corregido
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       )
       .then(
-        (response) => {
+        () => {
           setIsSent(true);
           setFormData({
             name: "",
@@ -95,6 +109,7 @@ export default function ContactForm() {
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid sm:grid-cols-2 gap-5">
+          {/* NOMBRE (Obligatorio) */}
           <div>
             <label className="block text-xs font-bold uppercase text-[#143322] mb-2 tracking-wide">
               NOMBRE *
@@ -110,6 +125,7 @@ export default function ContactForm() {
             />
           </div>
 
+          {/* CORREO (Obligatorio + formato email) */}
           <div>
             <label className="block text-xs font-bold uppercase text-[#143322] mb-2 tracking-wide">
               CORREO *
@@ -127,30 +143,41 @@ export default function ContactForm() {
         </div>
 
         <div className="grid sm:grid-cols-2 gap-5">
+          {/* TELÉFONO (Obligatorio + Solo 10 Números) */}
           <div>
             <label className="block text-xs font-bold uppercase text-[#143322] mb-2 tracking-wide">
-              TELÉFONO
+              TELÉFONO *
             </label>
             <input
               type="tel"
               name="phone"
-              placeholder="618 000 0000"
+              required
+              minLength={10}
+              maxLength={10}
+              pattern="[0-9]{10}"
+              title="Por favor ingresa un número de 10 dígitos"
+              placeholder="6180000000"
               value={formData.phone}
               onChange={handleChange}
               className="w-full px-4 py-3.5 rounded-xl border border-[#E2E8F0] bg-[#F4F7F5] focus:bg-white focus:outline-none focus:border-[#7BC142] text-sm text-[#143322] placeholder-slate-400 font-medium transition-all"
             />
           </div>
 
+          {/* SERVICIO DE INTERÉS (Obligatorio) */}
           <div>
             <label className="block text-xs font-bold uppercase text-[#143322] mb-2 tracking-wide">
-              SERVICIO DE INTERÉS
+              SERVICIO DE INTERÉS *
             </label>
             <select
               name="service"
+              required
               value={formData.service}
               onChange={handleChange}
               className="w-full px-4 py-3.5 rounded-xl border border-[#E2E8F0] bg-[#F4F7F5] focus:bg-white focus:outline-none focus:border-[#7BC142] text-sm text-[#143322] font-medium transition-all cursor-pointer"
             >
+              <option value="" disabled>
+                *Selecciona un servicio
+              </option>
               <option value="Mantenimiento eléctrico">
                 Mantenimiento eléctrico
               </option>
@@ -161,11 +188,13 @@ export default function ContactForm() {
                 Obra Civil e Industrial
               </option>
               <option value="Buceo Industrial">Buceo Industrial</option>
-              <option value="Diagnóstico y Pruebas NFPA">Otro</option>
+
+              <option value="Otro">Otro</option>
             </select>
           </div>
         </div>
 
+        {/* MENSAJE (Obligatorio) */}
         <div>
           <label className="block text-xs font-bold uppercase text-[#143322] mb-2 tracking-wide">
             MENSAJE *
